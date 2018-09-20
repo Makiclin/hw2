@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+    <script>function setup() {
+  createCanvas(400, 400);
+
+}
+
+var x = 10;
+var speed = 3;
+var diameter = 30;
+var y = 20;
+
+var x2 = 300;
+var speed2 = -6;
+var diameter2 = 20;
+var y2 = 0;
+
+var x3 = 200;
+var speed3 = -6;
+var diameter3 = 40;
+var y3 = 0;
+
+
+
+
+function draw() {
+  var bgColor = map(x, 0, width, 0, 255);
+  var color = map(x, 0, width, 255, 0);
+  var color2 = (200);
+  var color3 = (204, 102, 0);
+
+  background(bgColor);
+
+  fill(color)
+  ellipse(x, y, diameter);
+
+  x = x + speed;
+  y = y + speed;
+  diameter = diameter + speed;
+
+  if (x > width || y > height) {
+    speed = -4*speed;
+  }
+
+  if (x < 0) {
+    speed = 3;
+  }
+
+
+
+
+  fill(color2)
+  ellipse(x2, y2, diameter2);
+  x2 = x2 - speed2;
+  y2 = y2 + speed2;
+
+  if (x2 > width || y2 < 0) {
+    speed2 = -1*speed2;
+  }
+
+  if (x2 < 0) {
+    speed2 = -1*speed2;
+  }
+
+
+  fill(color3)
+  ellipse(x3, y3, diameter3);
+  x3 = x3 + speed3;
+  y3 = y3 + speed3;
+
+  if (x3 > width || y3 < 0) {
+    speed3 = -1*speed3;
+  }
+
+  if (x3 < 0) {
+    speed3 = -1*speed3;
+  }
+
+
+
+}
+
+
+</script>
+  </body>
+</html>
